@@ -1,56 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario Teste</title>
     <!--<link rel="stylesheet" type="text/css" href="css/style.css" />-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 </head>
+
 <body>
 
-<h1 class="text-center"> Cadastro de Produtos </h1>
+    <h1 class="text-center"> Cadastro de Produtos </h1>
 
-<form id="formulario">
-    <div class="mb-3">
-        <label class="form-label" for="nomeProduto">Nome do Produto:</label>
-        <input class="form-control" type="text" placeholder="coloque o nome do produto" name="nomeProduto" id="nomeProduto" required>
+    <form id="formulario">
+        <div class="mb-3">
+            <label class="form-label" for="nomeProduto">Nome do Produto:</label>
+            <input class="form-control" type="text" placeholder="coloque o nome do produto" name="nomeProduto"
+                id="nomeProduto" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="descricao">Descrição:</label>
+            <input class="form-control" type="text" name="descricao" id="descricao" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="preco">Preço:</label>
+            <input class="form-control" type="text" name="preco" id="preco" required>
+        </div>
+
+        <button type="submit" onclick="mensagem()"
+            class="btn btn-primary btn-lg m-3 d-grid gap-2 col-4 mx-auto">Enviar</button>
+    </form>
+<div>
+    <h3>Lista de Produtos</h3>
+
+    <table id="table-produtos" class="table table-striped" style="width:100%">
+
+        <!--Cabeçalho-->
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Preço</th>
+            </tr>
+        </thead>
+
+        <tbody id="produtosDados">
+        </tbody>
+    </table>
+    <button id="listarprodutos" class="btn btn-primary">Listar Produtos</button>
+</div>
+
+    <div>
+        
+        <h3>Busca 1 de Produto</h3>
+        <div class="mb-3">
+            <label class="form-label" for="idBusca">ID do Produto:</label>
+            <input class="form-control" type="number" name="idBusca" placeholder="Informe o ID do produto" id="idBusca" required>
+            <button type="button" onclick="buscaProdutoPorId()" class="btn btn-primary btn-lg m-3">Buscar por ID</button>
+        </div>
+        <table id="tabelaResultado" class="table table-striped" style="width:100%">
+
+            <!--Cabeçalho-->
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Preço</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            </tbody>
+        </table>
     </div>
-
-    <div class="mb-3">
-        <label class="form-label" for="descricao">Descrição:</label>
-        <input class="form-control" type="text" name="descricao" id="descricao" required>
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label" for="preco">Preço:</label>
-        <input class="form-control" type="text" name="preco" id="preco" required>
-    </div>
-
-    <button type="submit" onclick="mensagem()" class="btn btn-primary btn-lg m-3 d-grid gap-2 col-4 mx-auto">Enviar</button>
-</form>
-
-<h3>Lista de Produtos</h3>
-
-<table id="table-produtos" class="table table-striped" style="width:100%">
-
-    <!--Cabeçalho-->
-    <thead>
-    <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Nome</th>
-        <th scope="col">Descrição</th>
-        <th scope="col">Preço</th>
-    </tr>
-    </thead>
-
-    <tbody id="produtosDados">
-    </tbody>
-</table>
-
-<script src="js/produto.js"></script>
+    <script src="js/produto.js"></script>
+    <script src="js/cadastraproduto.js"></script>
 
 
 </body>
+
 </html>

@@ -33,7 +33,7 @@ public class ProdutoController {
 
     @GetMapping(path = "/{id}")
     @CrossOrigin(origins = "http://127.0.0.1:3000")
-    public ResponseEntity<Optional<Produtos>> buscaPorId(@Param("id") Long id){
+    public ResponseEntity<Optional<Produtos>> buscaPorId(@PathVariable Long id){
         return ResponseEntity.ok(produtoService.buscaPorId(id));
     }
 }
